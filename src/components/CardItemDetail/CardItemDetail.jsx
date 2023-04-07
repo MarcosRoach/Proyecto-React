@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
   CardActions,
@@ -12,23 +11,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ItemCounts from "../ItemsCounts/ItemCounts";
 
-const CardItem = ({ producto, productoID }) => {
+const CardItemDetail = ({ producto }) => {
   return (
     <Link to={`/shop/${producto.id}`}>
-      <Card sx={{ maxWidth: 345, height: 400, textDecoration: "none" }}>
+      <Card sx={{ maxWidth: 345, textDecoration: "none" }}>
         <CardMedia
           component="img"
           height="140"
           image={producto.image}
         ></CardMedia>
         <CardContent>
-          <Typography
-            sx={{ fontSize: 15, fontWeight: "bold", height: 120 }}
-            gutterBottom
-            variant="h6"
-            component="div"
-          >
+          <Typography gutterBottom variant="h6" component="div">
             {producto.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {producto.description}
           </Typography>
         </CardContent>
         <CardActionArea>
@@ -38,9 +35,7 @@ const CardItem = ({ producto, productoID }) => {
             </Typography>
           </CardActions>
           <CardActions>
-            <Button size="small" color="primary">
-              Comprar
-            </Button>
+            <ItemCounts producto={producto} />
           </CardActions>
         </CardActionArea>
       </Card>
@@ -48,4 +43,4 @@ const CardItem = ({ producto, productoID }) => {
   );
 };
 
-export default CardItem;
+export default CardItemDetail;

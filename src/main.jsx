@@ -11,13 +11,21 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import "./index.css";
+import Footer from "./components/footer/Footer";
+import { CartProvider } from "./context/CartContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    {/* Reiniciar Estilos Bases */}
-    <CssBaseline />
-    {/* Reiniciar Estilos Bases */}
+  <>
+    <CartProvider>
+      <BrowserRouter>
+        {/* Reiniciar Estilos Bases */}
+        <CssBaseline />
+        {/* Reiniciar Estilos Bases */}
 
-    <App />
-  </BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CartProvider>
+
+    <Footer></Footer>
+  </>
 );

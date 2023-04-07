@@ -5,22 +5,27 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import { Navigate, Route, Routes } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import db from "../db/firebase-config";
+import { collection, getDocs } from "firebase/firestore";
 import Bienvenida from "./components/Bienvenida/Bienvenida";
 import Contacto from "./components/Contacto/Contacto";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const [productos, setProductos] = useState([]);
 
-  // Funcion Para consumir API con Async Await + Axios
+  //Referencia a la coleccion de productos
+  const productosRef = collection(db, "items");
+
+  // Funcion Para consumir Firebase con Async Await
   const getProductos = async () => {
-    try {
-      const res = await axios
-        .get("https://fakestoreapi.com/products")
-        .then((res) => setProductos(res.data));
-    } catch (error) {
-      console.log("ERROR");
-    }
+    const productosCollection = await getDocs(productosRef);
+    const productosList = productosCollection.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+
+    setProductos(productosList);
   };
 
   useEffect(() => {
@@ -47,6 +52,7 @@ function App() {
           element={<ItemListContainer productos={productos} />}
         ></Route>
         <Route path="/contact" element={<Contacto />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
       </Routes>
     </Container>
   );

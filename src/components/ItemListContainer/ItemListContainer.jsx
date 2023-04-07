@@ -25,14 +25,14 @@ const ItemListContainer = ({ productos }) => {
       <Grid container spacing={2}>
         <Grid item xs={2}>
           {categorias.map((categoria) => (
-            <Categorias categoria={categoria} />
+            <Categorias key={categoria} categoria={categoria} />
           ))}
         </Grid>
 
         <Grid item xs={10} sx={{}} container spacing={1}>
           {productos.map((producto) => (
             <Grid key={producto.id} item xs={3}>
-              <CardItem producto={producto} />
+              <CardItem producto={producto} productoID={producto.id} />
             </Grid>
           ))}
         </Grid>
