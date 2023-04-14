@@ -11,8 +11,8 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import "./index.css";
-import Footer from "./components/footer/Footer";
 import { CartProvider } from "./context/CartContext";
+import Footer from "./components/Footer/Footer";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
