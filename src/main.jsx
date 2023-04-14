@@ -26,6 +26,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </BrowserRouter>
     </CartProvider>
 
-    <Footer></Footer>
+    <Footer />
   </>
 );
