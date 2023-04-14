@@ -1,6 +1,5 @@
-import { Filter } from "@mui/icons-material";
 import { Box, Grid } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import CardItem from "../CardItem/CardItem";
 import Categorias from "../Categorias/Categorias";

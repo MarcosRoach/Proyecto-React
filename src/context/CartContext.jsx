@@ -1,7 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import { createContext, useEffect, useState } from "react";
 import db from "../../db/firebase-config";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const CartContext = createContext();
 

@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import ItemCounts from "../ItemsCounts/ItemCounts";
 
 const CardItem = ({ producto, productoID }) => {
   return (

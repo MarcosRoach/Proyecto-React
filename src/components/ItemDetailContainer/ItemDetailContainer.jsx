@@ -1,10 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardItem from "../CardItem/CardItem";
 import CardItemDetail from "../CardItemDetail/CardItemDetail";
 import db from "../../../db/firebase-config";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   //  Acceder al valor del parametro de la ruta del navegador

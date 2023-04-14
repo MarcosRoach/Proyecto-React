@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { CartContext } from "../../context/CartContext";
-import { Alert, FormControl, Input, InputAdornment } from "@mui/material";
+import { FormControl, Input, InputAdornment } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import { useState } from "react";
 import MailIcon from "@mui/icons-material/Mail";
